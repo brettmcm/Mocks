@@ -7,18 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73057CC827F2AD9D00BA2D0F /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73057CC727F2AD9D00BA2D0F /* DeviceSettings.swift */; };
+		7329FFEC27E17FFA00C41770 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7329FFEB27E17FFA00C41770 /* ImagePicker.swift */; };
+		73339BCE27DD329900C335DC /* Selectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73339BCD27DD329900C335DC /* Selectors.swift */; };
+		73339BD027DD32F500C335DC /* MockStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73339BCF27DD32F500C335DC /* MockStack.swift */; };
+		7353B2B327E40BD700682AC4 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7353B2B227E40BD700682AC4 /* Modifiers.swift */; };
 		73BCC0CB27D5537E00400375 /* MocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC0CA27D5537E00400375 /* MocksApp.swift */; };
 		73BCC0CD27D5537E00400375 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC0CC27D5537E00400375 /* ContentView.swift */; };
 		73BCC0CF27D5538100400375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BCC0CE27D5538100400375 /* Assets.xcassets */; };
 		73BCC0D227D5538100400375 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BCC0D127D5538100400375 /* Preview Assets.xcassets */; };
+		73BCC0D927D553A400400375 /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC0D827D553A400400375 /* MockView.swift */; };
+		73BCC0DB27D5625100400375 /* MockSpecRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC0DA27D5625100400375 /* MockSpecRow.swift */; };
+		73BCC0DE27D5674500400375 /* DeviceSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC0DD27D5674500400375 /* DeviceSelect.swift */; };
+		73CB1EF927DE450E00A89E20 /* MappingStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB1EF827DE450E00A89E20 /* MappingStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73057CC727F2AD9D00BA2D0F /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
+		7329FFEB27E17FFA00C41770 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		7329FFED27E18A7000C41770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		73339BCD27DD329900C335DC /* Selectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectors.swift; sourceTree = "<group>"; };
+		73339BCF27DD32F500C335DC /* MockStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStack.swift; sourceTree = "<group>"; };
+		7353B2B227E40BD700682AC4 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		73BCC0C727D5537E00400375 /* Mocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BCC0CA27D5537E00400375 /* MocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocksApp.swift; sourceTree = "<group>"; };
 		73BCC0CC27D5537E00400375 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		73BCC0CE27D5538100400375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73BCC0D127D5538100400375 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		73BCC0D827D553A400400375 /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
+		73BCC0DA27D5625100400375 /* MockSpecRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSpecRow.swift; sourceTree = "<group>"; };
+		73BCC0DD27D5674500400375 /* DeviceSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSelect.swift; sourceTree = "<group>"; };
+		73CB1EF727DE446F00A89E20 /* valueMapping.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = valueMapping.json; sourceTree = "<group>"; };
+		73CB1EF827DE450E00A89E20 /* MappingStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +71,14 @@
 		73BCC0C927D5537E00400375 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				7329FFED27E18A7000C41770 /* Info.plist */,
 				73BCC0CA27D5537E00400375 /* MocksApp.swift */,
 				73BCC0CC27D5537E00400375 /* ContentView.swift */,
+				73BCC0D827D553A400400375 /* MockView.swift */,
+				73BCC0DC27D5673700400375 /* Mock Specs */,
+				73BCC0DA27D5625100400375 /* MockSpecRow.swift */,
 				73BCC0CE27D5538100400375 /* Assets.xcassets */,
+				73CB1EF627DE446F00A89E20 /* Resources */,
 				73BCC0D027D5538100400375 /* Preview Content */,
 			);
 			path = Mocks;
@@ -65,6 +90,28 @@
 				73BCC0D127D5538100400375 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		73BCC0DC27D5673700400375 /* Mock Specs */ = {
+			isa = PBXGroup;
+			children = (
+				73BCC0DD27D5674500400375 /* DeviceSelect.swift */,
+				73339BCD27DD329900C335DC /* Selectors.swift */,
+				73339BCF27DD32F500C335DC /* MockStack.swift */,
+				7329FFEB27E17FFA00C41770 /* ImagePicker.swift */,
+				73057CC727F2AD9D00BA2D0F /* DeviceSettings.swift */,
+			);
+			path = "Mock Specs";
+			sourceTree = "<group>";
+		};
+		73CB1EF627DE446F00A89E20 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				73CB1EF727DE446F00A89E20 /* valueMapping.json */,
+				73CB1EF827DE450E00A89E20 /* MappingStruct.swift */,
+				7353B2B227E40BD700682AC4 /* Modifiers.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73339BCE27DD329900C335DC /* Selectors.swift in Sources */,
 				73BCC0CD27D5537E00400375 /* ContentView.swift in Sources */,
+				73BCC0DB27D5625100400375 /* MockSpecRow.swift in Sources */,
+				7329FFEC27E17FFA00C41770 /* ImagePicker.swift in Sources */,
+				7353B2B327E40BD700682AC4 /* Modifiers.swift in Sources */,
+				73057CC827F2AD9D00BA2D0F /* DeviceSettings.swift in Sources */,
 				73BCC0CB27D5537E00400375 /* MocksApp.swift in Sources */,
+				73BCC0D927D553A400400375 /* MockView.swift in Sources */,
+				73BCC0DE27D5674500400375 /* DeviceSelect.swift in Sources */,
+				73339BD027DD32F500C335DC /* MockStack.swift in Sources */,
+				73CB1EF927DE450E00A89E20 /* MappingStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,11 +323,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Mocks/Preview Content\"";
 				DEVELOPMENT_TEAM = XD99NS7FS6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mocks/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Mocks needs to be able to save to your photo library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Mocks needs access to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,11 +355,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Mocks/Preview Content\"";
 				DEVELOPMENT_TEAM = XD99NS7FS6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mocks/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Mocks needs to be able to save to your photo library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Mocks needs access to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
