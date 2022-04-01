@@ -14,8 +14,11 @@ struct LightingSelect: View {
     @Binding public var bgColor: Color
     @Binding public var deviceActive: String
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
     @Binding public var darkMode: Bool
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     @Binding public var screenImage: Image?
     
@@ -48,8 +51,11 @@ struct LightingSelect: View {
                                         bgColor: $bgColor,
                                         deviceActive: $deviceActive,
                                         statusBarVisible: $statusBarVisible,
+                                        homeBarVisible: $homeBarVisible,
                                         darkMode: $darkMode,
                                         lightingActive: $lightingActive,
+                                        shadowStrength: $shadowStrength,
+                                        shadowAngle: $shadowAngle,
                                         framingActive: $framingActive,
                                         screenImage: $screenImage,
                                         targetProp: "shadow",
@@ -61,8 +67,11 @@ struct LightingSelect: View {
                                         bgColor: $bgColor,
                                         deviceActive: $deviceActive,
                                         statusBarVisible: $statusBarVisible,
+                                        homeBarVisible: $homeBarVisible,
                                         darkMode: $darkMode,
                                         lightingActive: $lightingActive,
+                                        shadowStrength: $shadowStrength,
+                                        shadowAngle: $shadowAngle,
                                         framingActive: $framingActive,
                                         screenImage: $screenImage,
                                         targetProp: "shadow",
@@ -73,8 +82,11 @@ struct LightingSelect: View {
                                         bgColor: $bgColor,
                                         deviceActive: $deviceActive,
                                         statusBarVisible: $statusBarVisible,
+                                        homeBarVisible: $homeBarVisible,
                                         darkMode: $darkMode,
                                         lightingActive: $lightingActive,
+                                        shadowStrength: $shadowStrength,
+                                        shadowAngle: $shadowAngle,
                                         framingActive: $framingActive,
                                         screenImage: $screenImage,
                                         targetProp: "shadow",
@@ -85,8 +97,11 @@ struct LightingSelect: View {
                                         bgColor: $bgColor,
                                         deviceActive: $deviceActive,
                                         statusBarVisible: $statusBarVisible,
+                                        homeBarVisible: $homeBarVisible,
                                         darkMode: $darkMode,
                                         lightingActive: $lightingActive,
+                                        shadowStrength: $shadowStrength,
+                                        shadowAngle: $shadowAngle,
                                         framingActive: $framingActive,
                                         screenImage: $screenImage,
                                         targetProp: "shadow",
@@ -121,8 +136,11 @@ struct LightingSelect2: View {
     @Binding public var bgColor: Color
     @Binding public var deviceActive: String
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
     @Binding public var darkMode: Bool
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     @Binding public var screenImage: Image?
     
@@ -134,8 +152,11 @@ struct LightingSelect2: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                  statusBarVisible: $statusBarVisible,
+                                 homeBarVisible: $homeBarVisible,
                                  darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                 shadowStrength: $shadowStrength,
+                                 shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage,
                                 targetProp: "shadow",
@@ -147,8 +168,11 @@ struct LightingSelect2: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                  statusBarVisible: $statusBarVisible,
+                                 homeBarVisible: $homeBarVisible,
                                  darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                 shadowStrength: $shadowStrength,
+                                 shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage,
                                 targetProp: "shadow",
@@ -159,8 +183,11 @@ struct LightingSelect2: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                  statusBarVisible: $statusBarVisible,
+                                 homeBarVisible: $homeBarVisible,
                                  darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                 shadowStrength: $shadowStrength,
+                                 shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage,
                                 targetProp: "shadow",
@@ -171,8 +198,11 @@ struct LightingSelect2: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                  statusBarVisible: $statusBarVisible,
+                                 homeBarVisible: $homeBarVisible,
                                  darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                 shadowStrength: $shadowStrength,
+                                 shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage,
                                 targetProp: "shadow",
@@ -198,8 +228,11 @@ struct FrameSelect: View {
     @Binding public var bgColor: Color
     @Binding public var deviceActive: String
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
     @Binding public var darkMode: Bool
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     @Binding public var screenImage: Image?
     
@@ -232,8 +265,11 @@ struct FrameSelect: View {
                                         bgColor: $bgColor,
                                         deviceActive: $deviceActive,
                                         statusBarVisible: $statusBarVisible,
+                                        homeBarVisible: $homeBarVisible,
                                         darkMode: $darkMode,
                                         lightingActive: $lightingActive,
+                                        shadowStrength: $shadowStrength,
+                                        shadowAngle: $shadowAngle,
                                         framingActive: $framingActive,
                                         screenImage: $screenImage,
                                         targetProp: "framing",
@@ -244,8 +280,11 @@ struct FrameSelect: View {
                                         bgColor: $bgColor,
                                         deviceActive: $deviceActive,
                                         statusBarVisible: $statusBarVisible,
+                                        homeBarVisible: $homeBarVisible,
                                         darkMode: $darkMode,
                                         lightingActive: $lightingActive,
+                                        shadowStrength: $shadowStrength,
+                                        shadowAngle: $shadowAngle,
                                         framingActive: $framingActive,
                                         screenImage: $screenImage,
                                         targetProp: "framing",
@@ -256,8 +295,11 @@ struct FrameSelect: View {
                                         bgColor: $bgColor,
                                         deviceActive: $deviceActive,
                                         statusBarVisible: $statusBarVisible,
+                                        homeBarVisible: $homeBarVisible,
                                         darkMode: $darkMode,
                                         lightingActive: $lightingActive,
+                                        shadowStrength: $shadowStrength,
+                                        shadowAngle: $shadowAngle,
                                         framingActive: $framingActive,
                                         screenImage: $screenImage,
                                         targetProp: "framing",
@@ -288,8 +330,11 @@ struct FrameSelect2: View {
     @Binding public var bgColor: Color
     @Binding public var deviceActive: String
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
     @Binding public var darkMode: Bool
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     @Binding public var screenImage: Image?
     
@@ -301,8 +346,11 @@ struct FrameSelect2: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                  statusBarVisible: $statusBarVisible,
+                                 homeBarVisible: $homeBarVisible,
                                  darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                 shadowStrength: $shadowStrength,
+                                 shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage,
                                 targetProp: "framing",
@@ -313,8 +361,11 @@ struct FrameSelect2: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                  statusBarVisible: $statusBarVisible,
+                                 homeBarVisible: $homeBarVisible,
                                  darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                 shadowStrength: $shadowStrength,
+                                 shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage,
                                 targetProp: "framing",
@@ -325,8 +376,11 @@ struct FrameSelect2: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                  statusBarVisible: $statusBarVisible,
+                                 homeBarVisible: $homeBarVisible,
                                  darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                 shadowStrength: $shadowStrength,
+                                 shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage,
                                 targetProp: "framing",
@@ -353,8 +407,11 @@ struct SceneOption: View {
     @Binding public var bgColor: Color
     @Binding public var deviceActive: String
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
     @Binding public var darkMode: Bool
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     @Binding public var screenImage: Image?
     
@@ -368,8 +425,11 @@ struct SceneOption: View {
                     bgColor: $bgColor,
                     deviceActive: targetProp == "device" ? $proposedValue : $deviceActive,
                     statusBarVisible: $statusBarVisible,
+                    homeBarVisible: $homeBarVisible,
                     darkMode: $darkMode,
                     lightingActive: targetProp == "shadow" ? $proposedValue : $lightingActive,
+                    shadowStrength: $shadowStrength,
+                    shadowAngle: $shadowAngle,
                     framingActive: targetProp == "framing" ? $proposedValue : $framingActive,
                     screenImage: $screenImage
                 )
@@ -412,8 +472,11 @@ struct SceneOption2: View {
     @Binding public var bgColor: Color
     @Binding public var deviceActive: String
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
     @Binding public var darkMode: Bool
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     @Binding public var screenImage: Image?
     
@@ -427,8 +490,11 @@ struct SceneOption2: View {
                     bgColor: $bgColor,
                     deviceActive: targetProp == "device" ? $proposedValue : $deviceActive,
                     statusBarVisible: $statusBarVisible,
+                    homeBarVisible: $homeBarVisible,
                     darkMode: $darkMode,
                     lightingActive: targetProp == "shadow" ? $proposedValue : $lightingActive,
+                    shadowStrength: $shadowStrength,
+                    shadowAngle: $shadowAngle,
                     framingActive: targetProp == "framing" ? $proposedValue : $framingActive,
                     screenImage: $screenImage
                 )

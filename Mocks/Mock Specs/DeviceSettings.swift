@@ -10,11 +10,14 @@ import SwiftUI
 struct DeviceSettings: View {
     
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
     @Binding public var darkMode: Bool
 
     @Binding public var bgColor: Color
     @Binding public var deviceActive: String
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     @Binding public var screenImage: Image?
     
@@ -63,11 +66,15 @@ struct DeviceSettings: View {
                         Text("Status bar visibility")
                             .foregroundColor(Color.gray)
                     }
+                    Toggle(isOn: $homeBarVisible) {
+                        Text("Home indicator visibility")
+                            .foregroundColor(Color.gray)
+                    }
                     Toggle(isOn: $darkMode) {
                         Text("Dark mode")
                             .foregroundColor(Color.gray)
                     }
-                    .disabled(!statusBarVisible)
+                    .disabled(!statusBarVisible && !homeBarVisible)
                 }
                 .padding()
                 .padding(.vertical, 4)

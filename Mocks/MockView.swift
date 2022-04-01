@@ -3,12 +3,17 @@ import SwiftUI
 struct MockView: View {
     
     @State public var statusBarVisible = true
+    @State public var homeBarVisible = true
     @State public var darkMode = false
     @State private var deviceSelect = false
     @State private var bgColor = Color.red
     
     @State public var deviceSelectorVisible = false
     @State public var lightSelectorVisible = false
+    
+    @State public var shadowStrength = 1.0
+    @State public var shadowAngle = 0.0
+    
     @State public var frameSelectorVisible = false
     
     @State public var deviceActive = "iphone12pro"
@@ -24,10 +29,13 @@ struct MockView: View {
         ZStack(alignment: .bottom) {
             MockDetails(
                 statusBarVisible: $statusBarVisible,
+                homeBarVisible: $homeBarVisible,
                 darkMode: $darkMode,
                 bgColor: $bgColor,
                 deviceActive: $deviceActive,
                 lightingActive: $lightingActive,
+                shadowStrength: $shadowStrength,
+                shadowAngle: $shadowAngle,
                 framingActive: $framingActive,
                 isShowPhotoLibrary: $isShowPhotoLibrary,
                 screenImage: $screenImage,
@@ -38,8 +46,11 @@ struct MockView: View {
                 bgColor: $bgColor,
                 deviceActive: $deviceActive,
                 statusBarVisible: $statusBarVisible,
+                homeBarVisible: $homeBarVisible,
                 darkMode: $darkMode,
                 lightingActive: $lightingActive,
+                shadowStrength: $shadowStrength,
+                shadowAngle: $shadowAngle,
                 framingActive: $framingActive,
                 screenImage: $screenImage
             )
@@ -48,8 +59,11 @@ struct MockView: View {
                 bgColor: $bgColor,
                 deviceActive: $deviceActive,
                 statusBarVisible: $statusBarVisible,
+                homeBarVisible: $homeBarVisible,
                 darkMode: $darkMode,
                 lightingActive: $lightingActive,
+                shadowStrength: $shadowStrength,
+                shadowAngle: $shadowAngle,
                 framingActive: $framingActive,
                 screenImage: $screenImage
             )
@@ -61,11 +75,15 @@ struct MockView: View {
 struct MockDetails: View {
     
     @Binding public var statusBarVisible: Bool
+    @Binding public var homeBarVisible: Bool
+
     @Binding public var darkMode: Bool
     @Binding public var bgColor: Color
     
     @Binding public var deviceActive: String
     @Binding public var lightingActive: String
+    @Binding public var shadowStrength: Double
+    @Binding public var shadowAngle: Double
     @Binding public var framingActive: String
     
     @Binding public var isShowPhotoLibrary: Bool
@@ -89,8 +107,11 @@ struct MockDetails: View {
                             bgColor: $bgColor,
                             deviceActive: $deviceActive,
                             statusBarVisible: $statusBarVisible,
+                            homeBarVisible: $homeBarVisible,
                             darkMode: $darkMode,
                             lightingActive: $lightingActive,
+                            shadowStrength: $shadowStrength,
+                            shadowAngle: $shadowAngle,
                             framingActive: $framingActive,
                             screenImage: $screenImage
                         )
@@ -151,10 +172,13 @@ struct MockDetails: View {
                             NavigationLink(destination:
                                 DeviceSettings(
                                     statusBarVisible: $statusBarVisible,
+                                    homeBarVisible: $homeBarVisible,
                                     darkMode: $darkMode,
                                     bgColor: $bgColor,
                                     deviceActive: $deviceActive,
                                     lightingActive: $lightingActive,
+                                    shadowStrength: $shadowStrength,
+                                    shadowAngle: $shadowAngle,
                                     framingActive: $framingActive,
                                     screenImage: $screenImage
                                 )
@@ -168,18 +192,21 @@ struct MockDetails: View {
                         
                         // Lighting select
                         NavigationLink(destination:
-                            LightingSelect2(
+                            LightingSettings(
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                 statusBarVisible: $statusBarVisible,
+                                homeBarVisible: $homeBarVisible,
                                 darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                shadowStrength: $shadowStrength,
+                                shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage
                             )
                             .navigationTitle("Lighting")
                         ) {
-                            MockSpecRow(label: "Lighting", value: lightingActive)
+                            MockSpecRow(label: "Lighting", value: "Adjust")
                         }
                         .padding(.horizontal, 12)
                         
@@ -192,8 +219,11 @@ struct MockDetails: View {
                                 bgColor: $bgColor,
                                 deviceActive: $deviceActive,
                                 statusBarVisible: $statusBarVisible,
+                                homeBarVisible: $homeBarVisible,
                                 darkMode: $darkMode,
                                 lightingActive: $lightingActive,
+                                shadowStrength: $shadowStrength,
+                                shadowAngle: $shadowAngle,
                                 framingActive: $framingActive,
                                 screenImage: $screenImage
                             )
@@ -247,8 +277,11 @@ struct MockDetails: View {
             bgColor: $bgColor,
             deviceActive: $deviceActive,
             statusBarVisible: $statusBarVisible,
+            homeBarVisible: $homeBarVisible,
             darkMode: $darkMode,
             lightingActive: $lightingActive,
+            shadowStrength: $shadowStrength,
+            shadowAngle: $shadowAngle,
             framingActive: $framingActive,
             screenImage: $screenImage
         )
