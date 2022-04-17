@@ -10,87 +10,57 @@ import SwiftUI
 
 struct MockStack: View {
     
-    @Binding public var bgColor: Color
-    @Binding public var deviceActive: String
-    @Binding public var statusBarVisible: Bool
-    @Binding public var homeBarVisible: Bool
-    @Binding public var darkMode: Bool
-    @Binding public var lightingActive: String
-    @Binding public var shadowStrength: Double
-    @Binding public var shadowAngle: Double
-    @Binding public var framingActive: String
-    @Binding public var screenImage: Image?
-    
+    @StateObject var settings: MockSettings
+
     var body: some View {
         
-        let deviceLayer = deviceActive + "-" + framingActive
-//        let shadowLayer = deviceLayer + "-" + lightingActive
-        let uiMode = darkMode ? "dark" : "light"
-        let statusLayer = deviceLayer + "-status-" + uiMode
-        let homeLayer = deviceLayer + "-home-" + uiMode
+        let uiMode = settings.darkMode ? "dark" : "light"
+        let statusLayer = "iphone12pro-full-status-" + uiMode
+        let homeLayer = "iphone12pro-full-home-" + uiMode
         
         GeometryReader { gp in
             ZStack {
                 Rectangle()
-                    .fill(bgColor)
+                    .fill(settings.bgColor)
                     .aspectRatio(1.2, contentMode: .fit)
-//                if !shadowLayer.contains("none") {
-//                    Image(shadowLayer)
-//                        .resizable()
-//                        .aspectRatio(1.2, contentMode: .fit)
-//                }
-                if self.screenImage == Image("") {
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: gp.size.width * 0.307, height: gp.size.height * 0.797)
-                        .cornerRadius( gp.size.width * 0.04)
-                        .dropShadowStyle(strength: shadowStrength, angle: shadowAngle)
-                        .if( framingActive == "top" ) { view in
-                            view
-                                .scaleEffect(2.015)
-                                .offset(y: gp.size.height * 0.5)
-                        }
-                        .if( framingActive == "bottom" ) { view in
-                            view
-                                .scaleEffect(2.015)
-                                .offset(y: gp.size.height * -0.561)
-                        }
-                } else {
-                    self.screenImage?
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: gp.size.width * 0.307, height: gp.size.height * 0.797)
-                        .cornerRadius( gp.size.width * 0.04)
-                        .dropShadowStyle(strength: shadowStrength, angle: shadowAngle)
-                        .if( framingActive == "top" ) { view in
-                            view
-                                .scaleEffect(2.015)
-                                .offset(y: gp.size.height * 0.5)
-                        }
-                        .if( framingActive == "bottom" ) { view in
-                            view
-                                .scaleEffect(2.015)
-                                .offset(y: gp.size.height * -0.561)
-                        }
-                }
-                Image(deviceLayer)
-                    .resizable()
-                    .aspectRatio(1.2, contentMode: .fit)
-                if !statusLayer.contains("bottom") && statusBarVisible {
-                    Image(statusLayer)
+                ZStack {
+                    if settings.screenImage == Image("") {
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: gp.size.width * 0.307, height: gp.size.height * 0.8)
+                            .cornerRadius( gp.size.width * 0.04)
+                    } else {
+                        settings.screenImage?
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: gp.size.width * 0.307, height: gp.size.height * 0.8)
+                            .cornerRadius( gp.size.width * 0.04)
+                    }
+                    Image("iphone12pro-full")
                         .resizable()
                         .aspectRatio(1.2, contentMode: .fit)
+                    if settings.statusBarVisible {
+                        Image(statusLayer)
+                            .resizable()
+                            .aspectRatio(1.2, contentMode: .fit)
+                        Image(homeLayer)
+                            .resizable()
+                            .aspectRatio(1.2, contentMode: .fit)
+                    }
                 }
-                if !homeLayer.contains("top") && homeBarVisible {
-                    Image(homeLayer)
-                        .resizable()
-                        .aspectRatio(1.2, contentMode: .fit)
-                }
+                .scaleEffect(settings.zoomLevel.truncate(places: 1))
+                .offset(y: settings.focusLevel.truncate(places: 1))
+                .clipped()
+                .dropShadowStyle(strength: settings.shadowStrength, angle: settings.shadowAngle)
+                .animation(.timingCurve(0.8, 0, 0.2, 1, duration: 0.2), value: settings.zoomLevel)
+                .animation(.timingCurve(0.8, 0, 0.2, 1, duration: 0.2), value: settings.focusLevel)
+                .animation(.timingCurve(0.8, 0, 0.2, 1, duration: 0.2), value: settings.shadowStrength)
+                .animation(.timingCurve(0.8, 0, 0.2, 1, duration: 0.2), value: settings.shadowAngle)
             }
             .aspectRatio(1.2, contentMode: .fit)
-            .clipped()
         }
+        .environmentObject(settings)
     }
     
 }
@@ -132,3 +102,4 @@ extension View {
         modifier(DropShadow(baseValue: baseValue, directionAngle: directionAngle))
     }
 }
+

@@ -9,82 +9,71 @@ import SwiftUI
 
 struct DeviceSettings: View {
     
-    @Binding public var statusBarVisible: Bool
-    @Binding public var homeBarVisible: Bool
-    @Binding public var darkMode: Bool
-
-    @Binding public var bgColor: Color
-    @Binding public var deviceActive: String
-    @Binding public var lightingActive: String
-    @Binding public var shadowStrength: Double
-    @Binding public var shadowAngle: Double
-    @Binding public var framingActive: String
-    @Binding public var screenImage: Image?
+    @StateObject var settings: MockSettings
     
-    @State var selectedColor: Color?
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         List {
-            
-            VStack(alignment: .leading) {
-                Text("DEVICE FRAME")
-                    .font(.caption)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.gray)
-                    .listRowSeparator(.hidden)
-                .padding(.horizontal)
-                HStack {
-                    VStack(alignment: .leading) {
+                    HStack {
+                        Text("Device")
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         Text("iPhone 12 Pro")
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    Image(systemName: "lock.fill")
-                        .foregroundColor(Color.secondary)
-                        .opacity(0.35)
-                }
-                .padding()
-                .padding(.vertical, 4)
-                .BGRoundedRectStyle(with: Color(.secondarySystemBackground))
-                Text("Currently only iPhone 12 Pro is supported")
-                    .font(.caption)
-                    .foregroundColor(Color.gray)
-                    .padding(.horizontal)
-            }
-            .padding(.bottom, 24)
-            .listRowSeparator(.hidden)
-            
-            
-            VStack(alignment: .leading) {
-                Text("STATUS BAR")
-                    .font(.caption)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.gray)
-                    .listRowSeparator(.hidden)
-                .padding(.horizontal)
-                VStack(alignment: .leading, spacing: 21) {
-                    Toggle(isOn: $statusBarVisible) {
-                        Text("Status bar visibility")
                             .foregroundColor(Color.gray)
+                        Image(systemName: "lock.fill")
+                            .foregroundColor(Color.secondary)
+                            .opacity(0.35)
                     }
-                    Toggle(isOn: $homeBarVisible) {
-                        Text("Home indicator visibility")
-                            .foregroundColor(Color.gray)
+                    .listRowBackground(Color.clear)
+                    
+                    Button(action: {
+                        settings.isShowPhotoLibrary = true
+                    }) {
+                        HStack {
+                            Text("Screen")
+                            Spacer()
+                            if settings.screenImage == Image("") {
+                                Text("Add Image")
+                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .clipped()
+                                    .font(.headline)
+                                    .foregroundColor(Color.blue)
+                            } else {
+                                settings.screenImage?
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 28, height: 28)
+                                    .background(Color(UIColor.tertiarySystemBackground))
+                                    .cornerRadius(4)
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                    }.sheet(isPresented: $settings.isShowPhotoLibrary) {
+                        ImagePicker(image: $settings.screenImage)
                     }
-                    Toggle(isOn: $darkMode) {
+                    .buttonStyle(PlainButtonStyle())
+                    .listRowBackground(Color.clear)
+            
+                    ColorPicker("Background", selection: $settings.bgColor, supportsOpacity: false)
+                        .listRowBackground(Color.clear)
+                    
+                    Toggle(isOn: $settings.statusBarVisible) {
+                        Text("Accessories")
+                    }
+                    .listRowBackground(Color.clear)
+            
+                    Toggle(isOn: $settings.darkMode) {
                         Text("Dark mode")
-                            .foregroundColor(Color.gray)
                     }
-                    .disabled(!statusBarVisible && !homeBarVisible)
+                    .disabled(!settings.statusBarVisible)
+                    .listRowBackground(Color.clear)
                 }
-                .padding()
-                .padding(.vertical, 4)
-                .BGRoundedRectStyle(with: Color(.secondarySystemBackground))
+                .padding(.vertical)
+                .listStyle(PlainListStyle())
+                .environment(\.defaultMinListRowHeight, 50)
+                .environmentObject(settings)
             }
-            .listRowSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        
-    }
+
 }
 
 
