@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		73057CC827F2AD9D00BA2D0F /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73057CC727F2AD9D00BA2D0F /* DeviceSettings.swift */; };
-		731EF275280B64B100C7B388 /* DebugTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731EF274280B64B100C7B388 /* DebugTest.swift */; };
 		7329FFEC27E17FFA00C41770 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7329FFEB27E17FFA00C41770 /* ImagePicker.swift */; };
 		73339BD027DD32F500C335DC /* MockStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73339BCF27DD32F500C335DC /* MockStack.swift */; };
 		734704C027F8F84F0081F254 /* FramingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734704BF27F8F84F0081F254 /* FramingSettings.swift */; };
@@ -28,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		73057CC727F2AD9D00BA2D0F /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
-		731EF274280B64B100C7B388 /* DebugTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTest.swift; sourceTree = "<group>"; };
 		7329FFEB27E17FFA00C41770 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		7329FFED27E18A7000C41770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		73339BCF27DD32F500C335DC /* MockStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStack.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 		73BCC0BE27D5537E00400375 = {
 			isa = PBXGroup;
 			children = (
-				731EF274280B64B100C7B388 /* DebugTest.swift */,
 				73BCC0C927D5537E00400375 /* Mocks */,
 				73BCC0C827D5537E00400375 /* Products */,
 			);
@@ -91,13 +88,13 @@
 		73BCC0C927D5537E00400375 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				73BCC0DC27D5673700400375 /* Mock Specs */,
+				73BCC0CE27D5538100400375 /* Assets.xcassets */,
+				73CB1EF627DE446F00A89E20 /* Resources */,
 				7367017C28035B7A004EC41E /* Pieces */,
 				7329FFED27E18A7000C41770 /* Info.plist */,
 				73BCC0CA27D5537E00400375 /* MocksApp.swift */,
 				73BCC0CC27D5537E00400375 /* ContentView.swift */,
-				73BCC0DC27D5673700400375 /* Mock Specs */,
-				73BCC0CE27D5538100400375 /* Assets.xcassets */,
-				73CB1EF627DE446F00A89E20 /* Resources */,
 				73BCC0D027D5538100400375 /* Preview Content */,
 			);
 			path = Mocks;
@@ -150,6 +147,8 @@
 			dependencies = (
 			);
 			name = Mocks;
+			packageProductDependencies = (
+			);
 			productName = Mocks;
 			productReference = 73BCC0C727D5537E00400375 /* Mocks.app */;
 			productType = "com.apple.product-type.application";
@@ -178,6 +177,8 @@
 				Base,
 			);
 			mainGroup = 73BCC0BE27D5537E00400375;
+			packageReferences = (
+			);
 			productRefGroup = 73BCC0C827D5537E00400375 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,7 +211,6 @@
 				7329FFEC27E17FFA00C41770 /* ImagePicker.swift in Sources */,
 				73720D6C27F6B44C005A3A7E /* LightingSettings.swift in Sources */,
 				7353B2B327E40BD700682AC4 /* Modifiers.swift in Sources */,
-				731EF275280B64B100C7B388 /* DebugTest.swift in Sources */,
 				73057CC827F2AD9D00BA2D0F /* DeviceSettings.swift in Sources */,
 				7367017E28035B86004EC41E /* ShareButton.swift in Sources */,
 				73BCC0CB27D5537E00400375 /* MocksApp.swift in Sources */,
@@ -276,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -331,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -346,18 +346,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Mocks/Preview Content\"";
 				DEVELOPMENT_TEAM = XD99NS7FS6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mocks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mocks;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Mocks needs to be able to save to your photo library";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Mocks needs access to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,7 +372,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,18 +381,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Mocks/Preview Content\"";
 				DEVELOPMENT_TEAM = XD99NS7FS6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mocks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mocks;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Mocks needs to be able to save to your photo library";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Mocks needs access to your photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -401,7 +407,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -16,17 +16,17 @@ struct DeviceSelect1: View {
             ScrollView {
                 VStack {
                     DeviceOption(name: "iPhone X", dims: "375x812", active: true)
-                        .listRowSeparator(.hidden)
+//                        .listRowSeparator(.hidden)
                     DeviceOption(name: "iPhone X", dims: "375x812", active: false)
-                        .listRowSeparator(.hidden)
+//                        .listRowSeparator(.hidden)
                     DeviceOption(name: "iPhone X", dims: "375x812", active: false)
-                        .listRowSeparator(.hidden)
+//                        .listRowSeparator(.hidden)
                     DeviceOption(name: "iPhone X", dims: "375x812", active: false)
-                        .listRowSeparator(.hidden)
+//                        .listRowSeparator(.hidden)
                     DeviceOption(name: "iPhone X", dims: "375x812", active: false)
-                        .listRowSeparator(.hidden)
+//                        .listRowSeparator(.hidden)
                     DeviceOption(name: "iPhone X", dims: "375x812", active: false)
-                        .listRowSeparator(.hidden)
+//                        .listRowSeparator(.hidden)
                 }
                 .padding()
             }

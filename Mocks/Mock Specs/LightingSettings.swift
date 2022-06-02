@@ -17,12 +17,13 @@ struct LightController: View {
     
     
     var body: some View {
+        if settings.hasPurchased {
             ZStack{
                 GeometryReader { geometry in
                     Image(systemName: "circle.fill")
                         .font(.system(size: 60))
                         .offset(x: -30, y: -30)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.white)
                         .shadow(color: .black.opacity(0.1), radius: 1, x: 0, y: 1)
                         .offset(x: dragged.width + 30, y: dragged.height + 30)
                         .gesture(DragGesture()
@@ -46,7 +47,7 @@ struct LightController: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.size.height - ((UIScreen.main.bounds.size.width * 1.2) - 28))
-            .background(.ultraThinMaterial)
+            .background(Color.gray.opacity(0.1))
             .clipShape(RoundedRectangle(cornerRadius: 38, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 38, style: .continuous)
@@ -55,6 +56,9 @@ struct LightController: View {
             .padding(16)
             .padding(.bottom, 56)
             .environmentObject(settings)
+        } else {
+            Text("Basic")
+        }
     }
     
 }

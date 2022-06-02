@@ -23,7 +23,7 @@ struct FrameController: View {
             HStack {
                 Text("Focus")
                     .frame(width: 75, alignment: .leading)
-                Slider(value: $settings.focusLevel, in: -150...150, step: 1)
+                Slider(value: $settings.focusLevel, in: -1...1, step: 0.01)
             }
             .listRowBackground(Color.clear)
             
@@ -55,7 +55,7 @@ struct FrameController: View {
                     }.buttonStyle(PlainButtonStyle())
                     Button(action: {
                         settings.zoomLevel = 2
-                        settings.focusLevel = 150
+                        settings.focusLevel = 1
                     }) {
                             GeometryReader { gp in
                                 ZStack {
@@ -79,7 +79,7 @@ struct FrameController: View {
                     }.buttonStyle(PlainButtonStyle())
                     Button(action: {
                         settings.zoomLevel = 2
-                        settings.focusLevel = -150
+                        settings.focusLevel = -1
                     }) {
                             GeometryReader { gp in
                                 ZStack {

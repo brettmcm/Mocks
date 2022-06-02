@@ -7,48 +7,56 @@
 
 import SwiftUI
 
+
 struct ShareButton: View {
-    
+        
     @StateObject var settings = MockSettings()
     
     @State var items : [Any] = []
-    @State var sheet = false
+//    @State var sheet = false
+    
+    @State private var screenshotShare = UIImage(named: "bird")
+    
+    class SheetMananger: ObservableObject{
+        
+        @Published var sheet = false
+    }
+    
+    @StateObject var sheetManager = SheetMananger()
     
     var body: some View {
-        VStack {
-            Spacer()
-            Button(action: {
-                
-                let mock = mockStackExport.snapshot()
-                items.removeAll()
-                items.append(mock)
+        Button(action: {
+            
+            let mock = mockStackExport.snapshot()
+            items.removeAll()
+            items.append(mock)
 
-                sheet.toggle()
+            sheetManager.sheet.toggle()
 
-            }, label: {
-                HStack {
-                        Text("Share")
-                            .font(.headline)
-                        Image(systemName: "arrow.right")
-                            .font(.headline)
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(.thickMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-            })
-            .sheet(isPresented: $sheet, content: {
-                ShareSheet(items: items)
-            })
-            .padding()
-            .padding(.bottom, 16)
-        }
+        }, label: {
+            Text("Share")
+                .font(.headline)
+//                HStack {
+//                        Text("Share")
+//                            .font(.headline)
+//                        Image(systemName: "arrow.right")
+//                            .font(.headline)
+//                    }
+//                    .frame(minWidth: 0, maxWidth: .infinity)
+//                    .padding()
+//                    .background(Color.gray.opacity(0.1))
+//                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        })
+        .sheet(isPresented: $sheetManager.sheet, content: {
+            ShareSheet(items: items)
+        })
     }
     
     var mockStackExport: some View {
         MockStack(settings: settings)
         .aspectRatio(1.2, contentMode: .fit)
         .frame(width: 600)
+        
     }
 }
 

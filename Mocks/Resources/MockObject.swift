@@ -10,7 +10,9 @@ import SwiftUI
 
 class MockSettings: ObservableObject {
     
-    @Published var appVersion = "v1.0.6"
+    @Published var hasPurchased = true
+    
+    @Published var appVersion = "v1.0.9"
     @Published var screenHeight = UIScreen.main.bounds.size.height
     @Published var screenWidth = UIScreen.main.bounds.size.width
     

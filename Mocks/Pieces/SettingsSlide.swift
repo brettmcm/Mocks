@@ -48,7 +48,7 @@ struct SettingSlide: View {
             }
         }
         .frame(maxHeight: open ? .infinity : settings.adjusting ? 0 : nil, alignment: .top)
-        .background(.regularMaterial)
+        .background(Color.gray.opacity(0.1))
         .clipShape(RoundedRectangle(cornerRadius: open ? 16 : 8, style: .continuous))
         .padding(.horizontal, open ? 0 : 16)
         .opacity(open ? 1 : settings.adjusting ? 0 : 1)

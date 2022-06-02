@@ -20,17 +20,15 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             VStack {
-                HStack {
+                HStack(spacing:6) {
                     Image(systemName: "iphone")
                     Text("Mocks")
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.title2)
-                    Text(settings.appVersion)
-                        .font(.caption)
-                        .foregroundColor(Color.gray)
+                        .font(.title2)
+                    ShareButton(settings: settings)
                 }
-                .frame(height: 68)
+                .frame(height: 76)
                 .padding(.horizontal)
                 .offset(y: settings.adjusting ? -24 : 0)
                 .opacity(settings.adjusting ? 0 : 1)
@@ -60,10 +58,10 @@ struct ContentView: View {
             .allowsHitTesting(false)
             
             
-            ShareButton(settings: settings)
-                .offset(y: settings.adjusting ? 116 : 0)
-                .padding(.bottom, 32)
-                .animation(.timingCurve(0.8, 0, 0.2, 1, duration: 0.3), value: settings.adjusting)
+//            ShareButton(settings: settings)
+//                .offset(y: settings.adjusting ? 116 : 0)
+//                .padding(.bottom, 32)
+//                .animation(.timingCurve(0.8, 0, 0.2, 1, duration: 0.3), value: settings.adjusting)
         }
         .padding(.top, 60)
         .edgesIgnoringSafeArea(.bottom)
